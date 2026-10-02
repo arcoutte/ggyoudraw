@@ -1,0 +1,31 @@
+Package: ggyoudraw
+Title: 'You Draw It' Charts for 'ggplot2'
+Version: 0.1.0
+Authors@R:
+    person("Arne", "Coutteau", , "c_arne@hotmail.com", role = c("aut", "cre", "cph"))
+Description: Lets readers finish a line chart themselves before the real
+    data are revealed, in the style of the 'You Draw It' charts of The New
+    York Times. Provides a 'ggplot2' layer, geom_you_draw_line(), and
+    you_draw_it(), which turns the plot into an interactive 'htmlwidget'
+    built on 'ggiraph'. The widget works in the viewer, in 'R Markdown' and
+    'Quarto' documents and in 'shiny' apps, where the reader's guesses come
+    back as an input.
+License: GPL (>= 3)
+Depends:
+    R (>= 4.1.0)
+Imports:
+    ggiraph (>= 0.8.0),
+    ggplot2 (>= 3.5.0),
+    grDevices,
+    grid,
+    htmltools,
+    htmlwidgets,
+    stats,
+    utils
+Suggests:
+    shiny,
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.3

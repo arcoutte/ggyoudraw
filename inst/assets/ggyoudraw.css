@@ -1,0 +1,64 @@
+/* The buttons and texts under a 'you draw it' chart. Text takes the colour of
+   the page, so the controls also read on a dark background. */
+.ydi-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 14px;
+  margin: 6px 0 0;
+  font: 14px/1.4 system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+.ydi-controls button {
+  font: inherit;
+  font-weight: 600;
+  padding: 8px 14px;
+  border: 1px solid rgba(128, 128, 128, 0.55);
+  border-radius: 6px;
+  background: #12161d;
+  color: #fff;
+  cursor: pointer;
+}
+.ydi-controls button:disabled {
+  border-color: #e2e6ec;
+  background: #e2e6ec;
+  color: #667080;
+  cursor: not-allowed;
+}
+.ydi-controls button.ydi-reset {
+  background: transparent;
+  color: inherit;
+}
+.ydi-controls [hidden] {
+  display: none;
+}
+.ydi-help {
+  opacity: 0.7;
+}
+.ydi-result {
+  flex-basis: 100%;
+  margin: 2px 0 0;
+  font-size: 15px;
+}
+/* Above the chart the bar keeps room for a button and the result, so the
+   chart does not move under the reader's finger on reveal. */
+.ydi-controls.ydi-top {
+  margin: 0 0 6px;
+  min-height: 5em;
+  align-content: flex-start;
+}
+/* The moment the line is complete, the button pulses a few times so the
+   reader notices it. */
+.ydi-controls button.ydi-ready {
+  animation: ydi-pulse 1.1s ease-out 3;
+}
+@keyframes ydi-pulse {
+  0%   { box-shadow: 0 0 0 0 rgba(217, 89, 38, 0.7); }
+  100% { box-shadow: 0 0 0 12px rgba(217, 89, 38, 0); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ydi-controls button.ydi-ready {
+    animation: none;
+    outline: 3px solid rgba(217, 89, 38, 0.7);
+    outline-offset: 2px;
+  }
+}
